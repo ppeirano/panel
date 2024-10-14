@@ -3,4 +3,3 @@ streamlit
 yfinance
 time
 matplotlib
-numpy
