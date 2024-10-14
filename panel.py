@@ -84,5 +84,5 @@ for i, asset in enumerate(default_assets):
 # Configuración para refrescar automáticamente
 while True:
     time.sleep(refresh_rate)
-    st.experimental_rerun()
+    st.rerun()
 
