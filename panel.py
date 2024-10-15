@@ -27,11 +27,18 @@ def get_last_value(ticker):
 
 # Función para obtener datos de rendimiento
 def get_performance(ticker):
-    stock = yf.Ticker(ticker)
-    data = stock.history(period='1d')
-    if data.empty:
-        return None
-    return round((data['Close'].iloc[-1] - data['Open'].iloc[-1]) / data['Open'].iloc[-1] * 100, 2)
+    try:
+        gp = 0
+        stock = yf.Ticker(ticker)
+        data = stock.history(period='1d')
+        if data.empty:
+            gp = 0
+        else:
+            gp = round((data['Close'].iloc[-1] - data['Open'].iloc[-1]) / data['Open'].iloc[-1] * 100, 2)
+    except:
+        gp = 0
+        print(ticker)
+    return gp
 
 # Control deslizante para el intervalo de actualización
 refresh_rate = st.slider("Intervalo de actualización (segundos)", 5, 300, 60)
