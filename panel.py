@@ -19,11 +19,18 @@ def get_data(ticker):
 
 # Función para obtener el último valor
 def get_last_value(ticker):
-    stock = yf.Ticker(ticker)
-    data = stock.history(period='1d')
-    if data.empty:
-        return None
-    return round(data['Close'].iloc[-1],2)
+    try:
+        gv=0
+        stock = yf.Ticker(ticker)
+        data = stock.history(period='1d')
+        if data.empty:
+            return 0
+        else:
+            gv = round(data['Close'].iloc[-1],2)
+    except:
+        gv = 0
+        print(ticker)
+    return gv 
 
 # Función para obtener datos de rendimiento
 def get_performance(ticker):
