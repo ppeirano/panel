@@ -7,7 +7,7 @@ import matplotlib.colors as mcolors
 st.title("Monitor de Índices y Acciones")
 
 # Lista predeterminada de activos
-default_assets = ["SPY", "QQQ", "DIA", "IWM", "EWZ", "AAPL", "MSFT", "TSLA", "NVDA", "MCD", "KO", "PEP", "XLK", "XLE", "XLF", "XLY", "XLV", "GGAL", "GGAL.BA", "BMA", "ALUA.BA", "YPF", "VIST", ]
+default_assets = ["SPY", "QQQ", "DIA", "IWM", "ES=F", "EWZ", "AAPL", "MSFT", "TSLA", "NVDA", "MCD", "KO", "PEP", "XLK", "XLE", "XLF", "XLY", "XLV", "GGAL", "GGAL.BA", "BMA", "ALUA.BA", "YPF", "VIST", ]
 
 # Función para obtener datos
 def get_data(ticker):
